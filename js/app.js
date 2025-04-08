@@ -13,7 +13,7 @@ function adicionar() {
         return;
     }
 
-    amigosLista.push(amigo.toUpperCase);
+    amigosLista.push(amigo.toUpperCase());
     document.getElementById('lista-amigos').textContent = amigosLista.join(', ');
     document.getElementById('nome-amigo').value = '';
 }
