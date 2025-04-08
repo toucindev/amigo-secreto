@@ -47,10 +47,6 @@ function embaralharLista(lista) {
     return lista;
 }
 
-function gerarAmigoAleatorio(qtd) {
-    return Math.floor(Math.random() * qtd);
-}
-
 function reiniciar() {
     amigosLista = [];
     document.querySelector('.prizeDraw__container').innerHTML = '';
