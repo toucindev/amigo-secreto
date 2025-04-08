@@ -19,6 +19,7 @@ function adicionar() {
 }
 
 function sortear() {
+
     if (amigosLista.length === 0) {
         alert('A lista de amigos está vazia. Adicione pelo menos dois nomes.');
         return;
@@ -26,6 +27,11 @@ function sortear() {
 
     if (amigosLista.length % 2 !== 0) {
         alert('Para realizar o sorteio, a quantidade de amigos deve ser um número **par**.');
+        return;
+    }
+
+    if(amigosLista.length < 4) {
+        alert('Adicione pelo menos 4 amigos.');
         return;
     }
 
