@@ -38,7 +38,8 @@ body {
   background-color: #000;
   border: 1px solid #1875e8;
   filter: drop-shadow(0px 0px 30px #1875e8);
-  height: 871px;
+  height: auto;
+  max-height: 90vh;
   left: 50%;
   margin: 0 auto;
   position: absolute;
@@ -46,6 +47,7 @@ body {
   transform: translate(-50%, -50%);
   width: 75%;
   z-index: 1;
+  overflow-y: auto;
 }
 
 .content__corner-rectangle {
@@ -79,7 +81,8 @@ body {
   line-height: 160%;
   margin-top: 1rem;
   padding: 24px;
-  width: 453px;
+  width: 100%;
+  max-width: 453px;
 }
 
 .friends__container > p {
@@ -106,7 +109,8 @@ body {
 .form__buttons {
   align-items: center;
   display: flex;
-  gap: 32px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .form__input {
@@ -122,7 +126,9 @@ body {
   margin-bottom: 32px;
   outline: none;
   padding: 8px 16px;
-  width: 517px;
+  width: 100%;
+  max-width: 517px;
+  box-sizing: border-box;
 }
 
 .form__input::placeholder {
@@ -154,6 +160,8 @@ body {
   top: 76px;
   z-index: 2;
   pointer-events: none;
+  max-width: 100%;
+  height: auto;
 }
 
 .prizeDraw__container {
@@ -161,7 +169,7 @@ body {
   font-size: 21px;
   font-style: italic;
   font-weight: 700;
-  height: 199px;
+  height: auto;
   line-height: 160%;
   margin-top: 1rem;
 }
@@ -181,6 +189,7 @@ body {
 .section--results {
   align-items: start;
   display: flex;
+  flex-direction: column;
   font-family: Inter;
   font-style: normal;
   gap: 48px;
@@ -189,11 +198,11 @@ body {
 .section__title {
   color: #fff;
   font-family: Chakra Petch;
-  font-size: 88px;
+  font-size: 48px;
   font-style: normal;
   font-weight: 700;
   line-height: 80%;
-  margin: 0 0 80px 0;
+  margin: 0 0 40px 0;
 }
 
 .section__title > span {
@@ -203,4 +212,73 @@ body {
 .secondary {
   background-color: #fff;
   color: #1875e8;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .content {
+    width: 90%;
+    padding: 40px 20px;
+  }
+
+  .content__main {
+    padding: 60px 40px;
+    gap: 40px;
+  }
+
+  .form__buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section__title {
+    font-size: 64px;
+  }
+
+  .content__corner-rectangle {
+    width: 300px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    width: 95%;
+    top: 55%;
+  }
+
+  .content__main {
+    padding: 40px 20px;
+    gap: 32px;
+  }
+
+  .form__input {
+    font-size: 18px;
+  }
+
+  .form__label,
+  .form__link,
+  .friends__title,
+  .prizeDraw__title {
+    font-size: 20px;
+  }
+
+  .button {
+    font-size: 18px;
+    width: 100%;
+    max-width: 208px;
+  }
+
+  .section__title {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .content__corner-rectangle {
+    display: none;
+  }
+
+  .page__image {
+    display: none;
+  }
 }
