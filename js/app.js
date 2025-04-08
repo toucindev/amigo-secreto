@@ -3,19 +3,19 @@ let amigosLista = [];
 function adicionar() {
     let amigo = document.getElementById('nome-amigo').value.trim();
 
-    amigo.toUpperCase();
+    let amigoName = amigo.toUpperCase();
 
-    if (amigo.length === 0) {
+    if (amigoName.length === 0) {
         alert('Por favor, informe o nome do amigo antes de adicionar.');
         return;
     }
 
-    if (amigosLista.includes(amigo)) {
-        alert(`O amigo "${amigo}" já foi adicionado à lista.`);
+    if (amigosLista.includes(amigoName)) {
+        alert(`O amigo "${amigoName}" já foi adicionado à lista.`);
         return;
     }
 
-    amigosLista.push(amigo);
+    amigosLista.push(amigoName);
     document.getElementById('lista-amigos').textContent = amigosLista.join(', ');
     document.getElementById('nome-amigo').value = '';
 }
