@@ -3,6 +3,8 @@ let amigosLista = [];
 function adicionar() {
     let amigo = document.getElementById('nome-amigo').value.trim();
 
+    amigo.toUpperCase();
+
     if (amigo.length === 0) {
         alert('Por favor, informe o nome do amigo antes de adicionar.');
         return;
@@ -13,7 +15,7 @@ function adicionar() {
         return;
     }
 
-    amigosLista.push(amigo.toUpperCase());
+    amigosLista.push(amigo);
     document.getElementById('lista-amigos').textContent = amigosLista.join(', ');
     document.getElementById('nome-amigo').value = '';
 }
