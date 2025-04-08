@@ -29,24 +29,22 @@ function sortear() {
         return;
     }
 
-    let amigosEmbaralhados = [];
-
-    while (amigosEmbaralhados.length < amigosLista.length) {
-        let amigo;
-        do {
-            let indiceAleatorio = gerarAmigoAleatorio(amigosLista.length);
-            amigo = amigosLista[indiceAleatorio];
-        } while (amigosEmbaralhados.includes(amigo));
-
-        amigosEmbaralhados.push(amigo);
-    }
+    amigosLista = embaralharLista(amigosLista);
 
     let html = document.querySelector('.prizeDraw__container');
     html.innerHTML = '';
 
-    for (let x = 0; x < amigosEmbaralhados.length; x += 2) {
-        html.innerHTML += `<p class="lista-sorteio">${amigosEmbaralhados[x]} → ${amigosEmbaralhados[x + 1]}</p>`;
+    for (let x = 0; x < amigosLista.length; x += 2) {
+        html.innerHTML += `<p class="lista-sorteio">${amigosLista[x]} → ${amigosLista[x + 1]}</p>`;
     }
+}
+
+function embaralharLista(lista) {
+    for (let i = lista.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [lista[i], lista[j]] = [lista[j], lista[i]]; 
+    }
+    return lista;
 }
 
 function gerarAmigoAleatorio(qtd) {
